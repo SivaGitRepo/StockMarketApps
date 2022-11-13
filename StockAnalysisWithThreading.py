@@ -4,6 +4,10 @@ import time
 import pandas as pd
 import queue as Queue
 import threading
+import openpyxl
+from openpyxl import *
+from openpyxl.styles import NamedStyle
+from openpyxl import load_workbook
 
 opts = webdriver.ChromeOptions()
 opts.headless =True
@@ -90,11 +94,11 @@ def things_to_be_done(name, q):
     dict = {}
     df1 = pd.DataFrame.from_dict(stock_dict)
     df1_transposed = df1.T
-    print(df1_transposed)
+    #print(df1_transposed)
     try:
-        df1_transposed.to_excel('data/2022July_output1.xlsx',"a")
+        df1_transposed.to_excel('data/2022Oct_output1_4k.xlsx', "a")
     except:
-        df1_transposed.to_excel('data/2022July_output2.xlsx', "a")
+        df1_transposed.to_excel('data/2022Oct_output2_4k.xlsx', "a")
 
 def main(df, no_of_threads):
 
@@ -117,7 +121,7 @@ if __name__ == '__main__':
     NO_OF_WORKERS = 6
     COUNTER = 0
     stock_dict = {}
-    df = pd.read_csv('data/stock_list.csv', sep=',', encoding='unicode_escape', usecols=['Stock', 'URL'])
+    df = pd.read_csv('data/stock_list_2022Oct_4k.csv', sep=',', encoding='unicode_escape', usecols=['Stock', 'URL'])
     #df["Security Name"] = df["Security Name"].str.replace(" ", "+")
     #df["Security Name"] = df["Security Name"].str.replace("&", "%26")
     main(df, NO_OF_WORKERS)

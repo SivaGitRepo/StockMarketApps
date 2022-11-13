@@ -1,0 +1,1 @@
+export MONGODB_URI = "mongodb+srv://test1:test1pw@cluster1.xkdoh.mongodb.net/?retryWrites=true&w=majority"

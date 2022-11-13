@@ -4,7 +4,7 @@
 3. Generate the URL by using below formula:
    CONCATENATE ("https://www.bseindia.com/stock-share-price/",SUBSTITUTE([Security Name]," ","-"),"/",[Security Id],"/",[Security Code])
    NOTE: REPLACE [] WITH EXCEL COLUMNS (EX: C1, D1)
-4. Then remove all other columns except Security Id & generated URL (from step 3)
+4. Then remove all other columns except Security Id & generated URL (from step 3); Rename the column names as Stock & URL
 5. Python script to be used: SIVALEARN/StockAnalysisWithThreading.py
 
 
